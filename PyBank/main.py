@@ -32,13 +32,15 @@ for num in profit_loss:
 average_change = round(net / total_months, 2)
 greatest_decrease = min(loss)
 greatest_increase = max(profit)
-#gd = int(greatest_decrease)
-#gi = int(greatest_increase)
-#print(gd)
-#print(gi)
-#index_d = profit_loss.index(gd)
-#index_i = profit_loss.index(gi)
 
+with open(budget, "r") as budgetfile:
+    budget_data = csv.reader(budgetfile, delimiter = ",")
+    headers = next(budget_data)
+    for row in budget_data:
+        pl = str(row[1])
+        if pl == str(greatest_decrease):
+            print(row[0])
+    
 
 print("Financial Analysis")
 print("--------------------------------------------------------")
@@ -47,3 +49,16 @@ print(f"Net Earnings: ${net}")
 print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits:(${greatest_increase})")
 print(f"Greatest Decrease in Losses: (${greatest_decrease})")
+
+summary = os.path.join ("Analysis", "Budgetsummary.csv")
+
+writer = []
+with open(summary,"w") as report:
+    writer = csv.writer(report, delimiter =" ")
+    writer.writerow("Financial Analysis")
+    writer.writerow("----------------------------------------")
+    writer.writerow(f"Total months: {total_months}")
+    writer.writerow(f"Net Earnings: ${net}")
+    writer.writerow(f"Average Change: ${average_change}")    
+    writer.writerow(f"Greatest Increase in Profits:(${greatest_increase})")    
+    writer.writerow(f"Greatest Decrease in Losses: (${greatest_decrease})")    
