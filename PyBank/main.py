@@ -51,15 +51,12 @@ print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {date_increase} (${greatest_increase})")
 print(f"Greatest Decrease in Losses: {date_decrease} (${greatest_decrease})")
 
-summary = os.path.join ("Analysis", "Budgetsummary.csv")
-
-writer = []
+summary = os.path.join ("Analysis", "Budgetsummary.txt")
 with open(summary,"w") as report:
-    writer = csv.writer(report, delimiter = " ")
-    writer.writerow("Financial Analysis")
-    writer.writerow("----------------------------------------")
-    writer.writerow(f"Total months: {total_months}")
-    writer.writerow(f"Net Earnings: ${net}")
-    writer.writerow(f"Average Change: ${average_change}")    
-    writer.writerow(f"Greatest Increase in Profits: {date_increase} (${greatest_increase})")    
-    writer.writerow(f"Greatest Decrease in Losses:  {date_decrease} (${greatest_decrease})")    
+    report.write("Financial Analysis \n")
+    report.write("---------------------------------------- \n")
+    report.write(f"Total months: {total_months} \n")
+    report.write(f"Net Earnings: ${net} \n")
+    report.write(f"Average Change: ${average_change} \n")    
+    report.write(f"Greatest Increase in Profits: {date_increase} (${greatest_increase}) \n")    
+    report.write(f"Greatest Decrease in Losses:  {date_decrease} (${greatest_decrease}) \n")    

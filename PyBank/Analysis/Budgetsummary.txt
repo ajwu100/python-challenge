@@ -1,0 +1,7 @@
+Financial Analysis 
+---------------------------------------- 
+Total months: 86 
+Net Earnings: $38382578.0 
+Average Change: $446309.05 
+Greatest Increase in Profits: Feb-12 ($1170593.0) 
+Greatest Decrease in Losses:  Sep-13 ($-1196225.0) 
